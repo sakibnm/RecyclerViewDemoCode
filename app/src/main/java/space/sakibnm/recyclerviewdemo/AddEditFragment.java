@@ -42,15 +42,12 @@ public class AddEditFragment extends Fragment {
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
-     * @param user User object
      * @return A new instance of fragment EditFragment.
      */
     //Factory for activating Add.......
-    public static AddEditFragment newInstance(User user) {
+    public static AddEditFragment newInstance() {
         AddEditFragment fragment = new AddEditFragment();
         Bundle args = new Bundle();
-        args.putSerializable(ARG_USER, user);
         fragment.setArguments(args);
         return fragment;
     }

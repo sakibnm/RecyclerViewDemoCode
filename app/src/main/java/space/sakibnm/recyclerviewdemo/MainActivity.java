@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements AddEditFragment.I
 
 //      Populating The First Add Fragment....
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.containerAddEdit, AddEditFragment.newInstance(new User()),"addFragment")
+                .add(R.id.containerAddEdit, AddEditFragment.newInstance(),"addFragment")
                 .commit();
 
     }
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements AddEditFragment.I
 
 //      Resetting to Add Fragment.....
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.containerAddEdit, AddEditFragment.newInstance(new User()),"addFragment")
+                .replace(R.id.containerAddEdit, AddEditFragment.newInstance(),"addFragment")
                 .commit();
     }
 
