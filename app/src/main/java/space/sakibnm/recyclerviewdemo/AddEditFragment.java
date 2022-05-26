@@ -66,8 +66,8 @@ public class AddEditFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Bundle args = getArguments();
         if (args != null) {
-            mUser = (User) args.getSerializable(ARG_USER);
             if(args.containsKey(ARG_POSITION)){
+                mUser = (User) args.getSerializable(ARG_USER);
                 position = args.getInt(ARG_POSITION);
                 isEdit = true;
             }else{
@@ -86,13 +86,14 @@ public class AddEditFragment extends Fragment {
         editTextAge = rootView.findViewById(R.id.editTextAge);
         buttonAddEdit = rootView.findViewById(R.id.buttonAddEdit);
 
-//      Setting the current values to EditTexts...
-        editTextName.setText(mUser.getName());
-        editTextEmail.setText(mUser.getEmail());
-        editTextAge.setText(mUser.getAge()+"");
-
 //      Changing the button names based on Edit from Recycler Clicked....
-        if(isEdit) buttonAddEdit.setText("Edit");
+        if(isEdit){
+            //      Setting the current values to EditTexts...
+            editTextName.setText(mUser.getName());
+            editTextEmail.setText(mUser.getEmail());
+            editTextAge.setText(mUser.getAge()+"");
+            buttonAddEdit.setText("Edit");
+        }
         else buttonAddEdit.setText("Add");
 
         buttonAddEdit.setOnClickListener(new View.OnClickListener() {
